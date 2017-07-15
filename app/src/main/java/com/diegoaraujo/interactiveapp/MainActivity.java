@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        String priceMessage = "Free";
+        displayMessage(priceMessage);
         displayPrice(this.quantity * 5);
     }
 
@@ -53,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
+    private void displayMessage(String message){
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+    }
 
     public void increment(View view) {
         this.quantity ++;
